@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+public class HighwayInfo {
+   public static void main(String[] args) {
+      // declare and instantiate a Scanner
+      Scanner scnr = new Scanner(System.in);
+      
+      // declare and initialize any other needed variables
+      int highwayNumber = 0;
+      String output = "";
+      
+      // prompt for and collect input
+      System.out.print("Enter the highway number : ");
+      highwayNumber = scnr.nextInt();
+
+      // compute required output
+     // all outputs start with this text
+     output = "The " + highwayNumber + " is ";
+
+     // is this highway auxiliary or primary?
+     if (highwayNumber > 99) {
+        int primaryNumber = highwayNumber % 100;
+        output += "auxiliary, serving the " + primaryNumber;
+     }
+     else {
+        output += "primary";
+     }
+
+     // does this highway go east/west or north/south
+     if ((highwayNumber % 2) == 0) {
+        output += ", going east/west.";
+     }
+     else {
+        output += ", going north/south.";
+     }
+      
+      // display the output
+      System.out.println(output);
+   }
+}
